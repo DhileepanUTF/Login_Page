@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/Forgot.dart';
+import 'Login.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,6 +24,8 @@ class Homepage extends StatelessWidget{
     double width=MediaQuery.of(context).size.width;
     double height=MediaQuery.of(context).size.height;
     return Scaffold(
+
+      //backgroundColor: Color(0xff0404f5),
       body: Container(
         height: height,
         width: width,
@@ -45,6 +47,8 @@ class Homepage extends StatelessWidget{
               SizedBox(
                 width: width*0.85,
                 child:TextField(
+
+
                 decoration: InputDecoration(
                   hintText: 'Email',
                   suffixIcon: Icon(Icons.email),
@@ -81,6 +85,7 @@ class Homepage extends StatelessWidget{
                     ),
                   ),
                   Container(
+                    //color: Colors.deepPurpleAccent,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +94,10 @@ class Homepage extends StatelessWidget{
                           //crossAxisAlignment: CrossAxisAlignment.center,
                           child: Text('Login'),
                           color: Color(0xffEE7B23),
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Inside(),));
+                            //Inside();
+                          },
                         ),
                       ],
 
@@ -108,6 +116,7 @@ class Homepage extends StatelessWidget{
                 child: Text('Sign Up'),
                 color: Color(0x0000002d),
                 onPressed: (){
+
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Signup()),);
                 },)
 
@@ -119,6 +128,8 @@ class Homepage extends StatelessWidget{
 
   }
 }
+
+
 
 class Signup extends StatelessWidget{
   @override
